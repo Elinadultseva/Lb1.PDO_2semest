@@ -13,7 +13,7 @@ try {
     if ($vendorName) {
         $sqlSELECT = "SELECT id_Vendors, v_name, items.name FROM vendors JOIN items ON id_vendors = fid_vendor WHERE v_name = :vendorName";
         $sth = $dbh->prepare($sqlSELECT);
-        $sth->bindValue(":vendorName", $vendorName, PDO::PARAM_STR);
+        $sth->bindValue(":vendorName", $vendorName);
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
@@ -36,7 +36,7 @@ try {
     } elseif ($categoryName) {
         $sqlSELECT = "SELECT id_category, c_name, items.name FROM category JOIN items ON id_category = fid_category WHERE c_name = :categoryName";
         $sth = $dbh->prepare($sqlSELECT);
-        $sth->bindValue(":categoryName", $categoryName, PDO::PARAM_STR);
+        $sth->bindValue(":categoryName", $categoryName);
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
