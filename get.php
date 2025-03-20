@@ -25,9 +25,9 @@ try {
 
         foreach ($result as $item) {  
             echo "<tr>";
-            echo "<td>" . $item["id_Vendors"] . "</td>";  
-            echo "<td>" . $item["v_name"] . "</td>";  
-            echo "<td>" . $item["name"] . "</td>";  
+            echo "<td>{$item['id_Vendors']}</td>";  
+            echo "<td>{$item['v_name']}</td>";  
+            echo "<td>{$item['name']}</td>";  
             echo "</tr>";
         }
 
@@ -48,9 +48,9 @@ try {
 
         foreach ($result as $item) {  
             echo "<tr>";
-            echo "<td>" . $item["id_category"] . "</td>";  
-            echo "<td>" . $item["c_name"] . "</td>";  
-            echo "<td>" . $item["name"] . "</td>";  
+            echo "<td>{$item['id_category']}</td>";  
+            echo "<td>{$item['c_name']}</td>";  
+            echo "<td>{$item['name']}</td>";  
             echo "</tr>";
         }
 
