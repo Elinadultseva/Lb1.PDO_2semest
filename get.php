@@ -61,8 +61,8 @@ try {
 
         $sqlSELECT = "SELECT id_items, name, price FROM items WHERE price BETWEEN :minPrice AND :maxPrice ORDER BY price ASC";
         $sth = $dbh->prepare($sqlSELECT);
-        $sth->bindValue(":minPrice", (int)$minPrice, PDO::PARAM_INT);
-        $sth->bindValue(":maxPrice", (int)$maxPrice, PDO::PARAM_INT);
+        $sth->bindValue(":minPrice", $minPrice);
+        $sth->bindValue(":maxPrice", $maxPrice);
         $sth->execute();
 
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
